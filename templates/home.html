@@ -10,17 +10,25 @@
         height: 360px;
         width: 100%;
         object-fit: cover;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id='banner' src="https://e81018b5-c8ff-4bab-afe3-c061a185169a-00-28e7b2s63lpgd.sisko.replit.dev/static/banner.jpg" height="320">
     <div class="container">
       <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-      <img class="img-fluid" id='banner' src="https://e81018b5-c8ff-4bab-afe3-c061a185169a-00-28e7b2s63lpgd.sisko.replit.dev/static/banner.jpg" height="320">
-      <h2 class="text-center mt-2 mb-4">About Jovian</h2>
-      <p class="lead">
-        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-      </p>
+      <div class="row" style="margin-bottom:16px">
+        <div class="col-md-6">
+          <p class="lead">
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+          </p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+          <img src="/static/people.jpg" style="height:320px; border-radius:4px;">
+        </div>
+      </div>
       <h2 class="text-center">Open Positions</h2>
       <div>
         {% for job in jobs %}
@@ -28,9 +36,9 @@
         {% endfor %}
       </div>
       <div class="text-center">
-        <button class='btn btn-primary btn-lg'>Contact Us</button>
-        <p class="mt-4">Copyright 2025, Jovian</p>
+        <a href='mailto:hello@jovian.ai?subject=Questions about' class='btn btn-primary btn-lg'>Contact Us</a>
       </div>
     </div>
+    {% include 'footer.html' %}
   </body>
 </html>
